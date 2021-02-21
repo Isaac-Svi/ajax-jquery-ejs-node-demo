@@ -1,8 +1,8 @@
 <%- include('./header') %>
 
 
-<form action="/login" method="post" class="login-form center shadow">
-  <h1>Login</h1>
+<form action="/register" method="post" class="login-form center shadow">
+  <h1>Register</h1>
   <% if (error.length > 0) { %>
    <div class="alert alert-danger" role="alert"><%= error %></div>
   <% } %>
@@ -14,10 +14,10 @@
     <label for="password" class="col-form-label">Password:</label>
     <input class="form-control" type="password" name="password" id="password">
   </div>
-  <button class="btn btn-primary">Log In</button>
+  <button class="btn btn-primary">Register</button>
   <br />
   <br />
-  <p>Don't have an account yet? Make an account <a href="/register">here</a>.</p>
+  <p>Already have an account? Log in <a href="/login">here</a>.</p>
 </form>
 
 <%- include('./footer') %>

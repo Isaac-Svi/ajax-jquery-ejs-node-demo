@@ -8,7 +8,7 @@ router
     try {
       const users = await User.find({})
 
-      res.render('profile', { users })
+      res.render('profile', { user: req.user.username, users })
     } catch (err) {
       console.error(err.message)
     }
@@ -39,6 +39,14 @@ router
     } catch (err) {
       console.error(err.message)
     }
+  })
+  .delete((req, res) => {
+    const { id } = req.body
+
+    User.findByIdAndDelete(id, (err, docs) => {
+      if (err) res.send({ error: err.message })
+      else res.send({ msg: 'Successfully deleted user' })
+    })
   })
 
 module.exports = router

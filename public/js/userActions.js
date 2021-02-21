@@ -19,7 +19,7 @@ modal.on('show.bs.modal', function (event) {
   modal.find('#username').val(username)
 })
 
-form.submit(function (event) {
+function editUser(event) {
   event.preventDefault()
 
   // serialize form data into form: username='some username'&password='some password'
@@ -48,4 +48,29 @@ form.submit(function (event) {
       modal.modal('hide')
     })
     .catch((err) => console.log(err.message))
-})
+}
+
+async function deleteUser(e) {
+  const button = $(e.target)
+  const row = button.closest('tr')
+  id = button.data('uid')
+
+  try {
+    const res = await fetch('/profile', {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ id }),
+    })
+    const data = await res.json()
+
+    if (data.error) throw new Error(data.error)
+
+    alert(data.msg)
+
+    row.remove()
+  } catch (err) {
+    console.log(err.message)
+  }
+}

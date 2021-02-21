@@ -4,10 +4,14 @@ const bcrypt = require('bcryptjs')
 
 const setupPassport = (passport) => {
   passport.serializeUser(function (user, done) {
-    done(null, user)
+    // once user logs in, user id is saved in session/cookie
+    done(null, { id: user._id, username: user.username })
   })
   passport.deserializeUser(function (user, done) {
-    done(null, user)
+    // once user makes request, we take id and set req.user to user
+    User.findById(user.id, (err, user) => {
+      return done(null, user)
+    })
   })
   passport.use(
     new LocalStrategy(async function (username, password, done) {
@@ -20,7 +24,7 @@ const setupPassport = (passport) => {
 
         return done(null, user)
       } catch (err) {
-        console.log(`Error: ${err.message}`)
+        // console.log(`Error: ${err.message}`)
         return done(err.message, false)
       }
     })

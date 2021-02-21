@@ -19,23 +19,53 @@ h1 {
   padding-bottom: 30px;
 }
 .center {
-  position: absolute;
-  top: 140px;
+  position: relative;
+  top: 50px;
   left: 50%;
   transform: translateX(-50%);
 }
+
+.shadow {
+  box-shadow: rgb(0 0 0 / 10%) 0px 10px 15px -3px,
+    rgb(0 0 0 / 5%) 0px 4px 6px -2px;
+}
+
 .login-form {
   box-sizing: content-box;
   width: 300px;
   padding: 30px;
   border-radius: 8px;
-  box-shadow: rgb(0 0 0 / 10%) 0px 10px 15px -3px,
-    rgb(0 0 0 / 5%) 0px 4px 6px -2px;
   background-color: white;
 }
 
 .table {
-  box-shadow: rgb(0 0 0 / 10%) 0px 10px 15px -3px,
-    rgb(0 0 0 / 5%) 0px 4px 6px -2px;
-  width: 300px;
+  width: clamp(350px, 90vw, 900px);
+}
+.table td {
+  min-width: 150px;
+}
+.table .pwd-cell {
+  max-width: 40vw;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.edit-btn::after {
+  content: 'Edit';
+}
+.delete-btn::after {
+  content: 'Delete';
+}
+@media only screen and (max-width: 500px) {
+  .edit-btn::after {
+    content: '\f044';
+    font-family: 'Font Awesome\ 5 Free';
+    font-style: normal;
+    font-weight: 900;
+  }
+  .delete-btn::after {
+    content: '\f1f8';
+    font-family: 'Font Awesome\ 5 Free';
+    font-style: normal;
+    font-weight: 900;
+  }
 }
