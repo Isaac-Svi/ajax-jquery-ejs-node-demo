@@ -21,7 +21,7 @@ const setupPassport = (passport) => {
         return done(null, user)
       } catch (err) {
         console.log(`Error: ${err.message}`)
-        return done(null, false)
+        return done(err.message, false)
       }
     })
   )
