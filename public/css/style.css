@@ -29,10 +29,13 @@ h1 {
   width: 300px;
   padding: 30px;
   border-radius: 8px;
-  box-shadow: 1px 2px 3px rgba(50, 50, 50, 0.05);
+  box-shadow: rgb(0 0 0 / 10%) 0px 10px 15px -3px,
+    rgb(0 0 0 / 5%) 0px 4px 6px -2px;
   background-color: white;
 }
 
 .table {
+  box-shadow: rgb(0 0 0 / 10%) 0px 10px 15px -3px,
+    rgb(0 0 0 / 5%) 0px 4px 6px -2px;
   width: 300px;
 }
