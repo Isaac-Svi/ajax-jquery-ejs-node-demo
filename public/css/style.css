@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&family=Open+Sans&display=swap');
+@font-face {
+  font-family: 'Operator Mono Medium';
+  src: url('../fonts/operator-mono-medium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+*,
+h1 {
+  font-family: 'Nunito', 'Open Sans', 'Operator Mono Medium', Verdana, Geneva,
+    Tahoma, sans-serif;
+}
+body {
+  padding: 30px;
+  min-height: 99vh;
+  background-color: rgb(238, 238, 238);
+}
+h1 {
+  padding-bottom: 30px;
+}
+.center {
+  position: absolute;
+  top: 140px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.login-form {
+  box-sizing: content-box;
+  width: 300px;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 1px 2px 3px rgba(50, 50, 50, 0.05);
+  background-color: white;
+}
+
+.table {
+  width: 300px;
+}
