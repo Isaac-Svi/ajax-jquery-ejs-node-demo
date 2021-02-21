@@ -31,6 +31,7 @@ h1 {
 }
 
 .login-form {
+  margin-top: 4%;
   box-sizing: content-box;
   width: 300px;
   padding: 30px;

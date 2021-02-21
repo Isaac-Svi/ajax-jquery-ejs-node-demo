@@ -4,7 +4,9 @@
   Profile - 
   <span><%= user %></span>
 </h1>
-<a href="/logout" class="btn btn-primary">Log Out</a>
+<form action="/logout" method="post">
+  <button class="btn btn-primary">Log Out</button>
+</form>
 
 <table class="table table-striped table-bordered table-hover center shadow">
   <tr>

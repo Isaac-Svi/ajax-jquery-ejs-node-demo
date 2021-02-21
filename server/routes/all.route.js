@@ -1,7 +1,4 @@
 const router = require('express').Router()
-const logoutRoute = require('./logout.route')
-
-router.use('/logout', logoutRoute)
 
 router.route('/a').get((req, res) => res.send('a'))
 router.route('/b').get((req, res) => res.send('b'))
